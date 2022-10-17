@@ -43,7 +43,7 @@ router.get("/elasticache/get_employee", async function (req, res) {
   var empName = req.query.empName;
   var mgrName = req.query.mgrName;
 
-  const stored_key = JSON.stringify({ n: emp_list_key, e: empName, m: mgrName })
+  const stored_key = `empName=${empName}________mgrName=${mgrName}`;
 
   // TODO: add cache logic here
 
