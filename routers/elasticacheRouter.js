@@ -20,7 +20,7 @@ router.get("/elasticache/list_employee_cached", async function (req, res) {
   const start_time = new Date().getTime();
 
   // get cache
-  const result_cached await awsElasticacheService.get(emp_list_key)
+  const result_cached = await awsElasticacheService.get(emp_list_key)
   if (result_cached) {
     console.log(`${emp_list_key} 存在此 cache`);
     res.send({ "result": result_cached, "processed_time": myUtilService.get_process_time(start_time) });
