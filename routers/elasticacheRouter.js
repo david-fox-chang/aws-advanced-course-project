@@ -62,7 +62,7 @@ router.get("/elasticache/get_employee", async function (req, res) {
 
   // TODO: add cache logic here
 
-  await awsElasticacheService.hset(result_cached, result);
+  await awsElasticacheService.hset(stored_key, result);
   res.send({"result": result,"processed_time": myUtilService.get_process_time(start_time)});
 });
 
